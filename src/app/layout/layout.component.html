@@ -1,1 +1,14 @@
-<p>layout works!</p>
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Year</th>
+    </tr>
+    <tr *ngFor="let currentMovie of currentMovies">
+      <td>{{currentMovie.id}}</td>
+      <td>{{currentMovie.title}}</td>
+      <td>{{currentMovie.year}}</td>
+    </tr>
+  </table>
+</div>
