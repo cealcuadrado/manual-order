@@ -1,3 +1,33 @@
+<div class="row justify-content-end align-items-center">
+  <div class="col-auto">
+    <label>Order by:</label>
+  </div>
+  <div class="col-auto">
+    <select class="form-control" [(ngModel)]="optionSelected" (change)="onChange()">
+      <option *ngFor="let option of options" [value]="option.value">
+        {{option.name}}
+      </option>
+    </select>
+  </div>
+</div>
+
+<hr/>
+
+<div class="row justify-content-between align-items-center">
+  <div class="col-auto">
+    <p>Option Selected: {{optionSelected}}</p>
+  </div>
+  <div class="col-auto">
+    <button class="btn btn-danger">
+      Reset default list of movies
+    </button>
+  </div>
+</div>
+
+
+
+<hr/>
+
 <div class="table-responsive">
   <table class="table table-bordered">
     <tr>
