@@ -60,6 +60,22 @@ export class LayoutComponent implements OnInit {
         this.currentMovies.sort(this.currentMoviesIdDecreasing);
         break;
       }
+      case "titleAZ": {
+        this.currentMovies.sort(this.currentMoviesTitleAZ);
+        break;
+      }
+      case "titleZA": {
+        this.currentMovies.sort(this.currentMoviesTitleZA);
+        break;
+      }
+      case "yearIncreasing": {
+        this.currentMovies.sort(this.currentMoviesYearIncreasing);
+        break;
+      }
+      case "yearDecreasing": {
+        this.currentMovies.sort(this.currentMoviesYearDecreasing);
+        break;
+      }
     }
   }
 
@@ -73,5 +89,29 @@ export class LayoutComponent implements OnInit {
     const idA = a.id;
     const idB = b.id;
     return idB - idA;
+  }
+
+  currentMoviesTitleAZ(a, b): number {
+    const titleA = a.title;
+    const titleB = b.title;
+    return titleA.localeCompare(titleB);
+  }
+
+  currentMoviesTitleZA(a, b): number {
+    const titleA = a.title;
+    const titleB = b.title;
+    return titleB.localeCompare(titleA);
+  }
+
+  currentMoviesYearIncreasing(a, b): number {
+    const yearA = a.year;
+    const yearB = b.year;
+    return yearA - yearB;
+  }
+
+  currentMoviesYearDecreasing(a, b): number {
+    const yearA = a.year;
+    const yearB = b.year;
+    return yearB - yearA;
   }
 }
